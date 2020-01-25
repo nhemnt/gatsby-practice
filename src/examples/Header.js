@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from 'gatsby';
 
 export const Header = () => {
-  const { site } = useStaticQuery(graphql`{
+  const { site: { siteMetadata: info } } = useStaticQuery(graphql`{
     site {
       siteMetadata {
         title
@@ -13,11 +13,10 @@ export const Header = () => {
       }
     }
   }`)
-  console.log(site);
   return (
     <div>
-      <h1>Header</h1>
-      <h1>Title: {site.siteMetadata.title}</h1>
+      <h1>Header: {info.author}</h1>
+      <h1>Title: {info.title}</h1>
     </div>
   )
 }
