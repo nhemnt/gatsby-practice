@@ -13,7 +13,10 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/example">example</Link>
-        </li>          
+        </li>
+        <li>
+          <Link to="/images">Images</Link>
+        </li>  
       </ul>
     </nav>
   )
