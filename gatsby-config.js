@@ -14,13 +14,6 @@ module.exports = {
   },
 
   plugins: [
-    // You can have multiple instances of this plugin
-    // to read source nodes from different locations on your
-    // filesystem.
-    //
-    // The following sets up the Jekyll pattern of having a
-    // "pages" directory for Markdown files and a "data" directory
-    // for `.json`, `.yaml`, `.csv`.
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,6 +21,15 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
   ]
   
 }
